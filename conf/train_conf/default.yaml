@@ -1,0 +1,20 @@
+train_t_range: None
+eval_t_range: None
+test_t_range: None
+pde_sampler: UniformSampler
+pde_reweighting: NoReWeighting
+optim_conf:
+  lr: 1e-3
+  betas: [ 0.9, 0.999 ]
+  eps: 1e-8
+  weight_decay: 0.0
+  amsgrad: False
+main_conf:
+  max_steps: 5000
+  pde_batch_size: 10000
+  initial_batch_size: 500
+  boundary_batch_size: 500
+  print_frequency: 100
+  eval_frequency: 500
+  model_save_folder: ./
+  model_basic_save_name: None

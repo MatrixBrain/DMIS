@@ -1,0 +1,3 @@
+initial_data_n: 2000
+boundary_data_n: 2000
+pde_data_n: 100000

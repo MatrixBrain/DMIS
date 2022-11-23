@@ -1,0 +1,11 @@
+load_model: False
+model_path: "./"
+dim:
+  input_dim: 2
+  output_dim: 1
+layer:
+  layer_n: 4
+  activate: "tanh"
+  final_activate: "Identify"
+  norm: False
+  layer_size: [32, 32, 32, 32]

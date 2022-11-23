@@ -1,0 +1,52 @@
+defaults:
+  - global_conf: default
+  - model_conf: default
+  - _self_
+
+equation_conf:
+  Burgers:
+    layer_n: 3
+    layer_size: [ 32, 32, 32 ]
+    output_dim: 1
+    weight_dict:
+      PINN-O: "PINN-O/best.pth"
+      PINN-N: "PINN-N/best.pth"
+      PINN-DMIS: "PINN-DMIS/best.pth"
+  KDV:
+    layer_n: 4
+    layer_size: [ 64, 64, 64, 64 ]
+    output_dim: 1
+    weight_dict:
+      PINN-O: "PINN-O/best.pth"
+      PINN-N: "PINN-N/best.pth"
+      PINN-DMIS: "PINN-DMIS/best.pth"
+  Schrodinger:
+    layer_n: 4
+    layer_size: [ 64, 64, 64, 64 ]
+    output_dim: 2
+    weight_dict:
+      PINN-O: "PINN-O/best.pth"
+      PINN-N: "PINN-N/best.pth"
+      PINN-DMIS: "PINN-DMIS/best.pth"
+  Diffusion:
+    layer_n: 4
+    layer_size: [ 32, 32, 32, 32 ]
+    output_dim: 1
+    weight_dict:
+      PINN-O: "PINN-O/best.pth"
+      PINN-N: "PINN-N/best.pth"
+      PINN-DMIS: "PINN-DMIS/best.pth"
+  ACEquation:
+    layer_n: 5
+    layer_size: [ 64, 64, 64, 64, 64 ]
+    output_dim: 1
+    weight_dict:
+      PINN-O: "PINN-O/best.pth"
+      PINN-N: "PINN-N/best.pth"
+      PINN-DMIS: "PINN-DMIS/best.pth"
+
+evaluation_metrics: [
+  "max error",
+  "mean absolute error",
+  "RMSE"
+]

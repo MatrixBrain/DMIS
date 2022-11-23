@@ -1,0 +1,55 @@
+defaults:
+  - global_conf: default
+  - data_conf: default
+  - model_conf: default
+  - train_conf: default
+  - _self_
+
+name: Schrodinger
+
+data_conf:
+  initial_data_n: 200
+  boundary_data_n: 200
+  pde_data_n: 60000
+
+global_conf:
+  seed: 10
+
+model_conf:
+  dim:
+    output_dim: 2
+  layer:
+    layer_n: 4
+    layer_size: [64, 64, 64, 64]
+
+problem_conf:
+  dims: 2
+  x_range: [-5, 5]
+  t_range: [0., 1.57]
+  initial_cond: 4 / (E**x + E**(-x))
+  boundary_cond: periodic
+
+train_conf:
+  train_t_range: [ 0, 0.9 ]
+  eval_t_range: [ 0.9, 1.1 ]
+  test_t_range: [ 1.1, 1.57 ]
+  pde_sampler: SamplerWithDMIS
+  pde_reweighting: BiasedReWeighting
+  reweighting_params:
+    k_init: 2
+    k_final: 2
+    iter_n: ${train_conf.main_conf.max_steps}
+  optim_conf:
+    lr: 1e-3
+  main_conf:
+    max_steps: 100000
+    print_frequency: 1
+    pde_batch_size: 20000
+    initial_batch_size: 50
+    boundary_batch_size: 50
+    model_basic_save_name: ${name}
+  sampler_conf:
+    forward_batch_size: ${train_conf.main_conf.pde_batch_size}
+    mesh_update_thres: 0.4
+    addon_points: [ [ 0., -5. ], [ 0., 5. ], [ 0.9, -5.], [ 0.9, 5. ] ]
+    seed_n: 1000

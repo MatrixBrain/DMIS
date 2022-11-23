@@ -1,0 +1,3 @@
+seed: 1024
+device: cuda
+tensorboard_path: ./tensorboard_log
