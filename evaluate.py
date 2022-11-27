@@ -33,7 +33,7 @@ def evaluation_setup(cfg):
         for model_key, weight_path in conf["weight_dict"].items():
             if weight_path != "":
                 weight_path = os.path.join(project_root,
-                                           "log/{}".format(equation_key),
+                                           "pretrain/{}".format(equation_key),
                                            weight_path)
                 model_conf["layer"]["layer_n"] = conf["layer_n"]
                 model_conf["layer"]["layer_size"] = conf["layer_size"]
