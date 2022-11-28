@@ -60,3 +60,12 @@ python evaluate.py hydra.job.chdir=True
 ```
 
 ## Citation
+If you find the code and pre-trained models useful for your research, please consider citing our paper. :blush:
+```
+@InProceedings{yang2022dmis,
+author = {Yang, Zijiang and Qiu, Zhongwei and Fu, Dongmei},
+title = {DMIS: Dynamic Mesh-based Importance Sampling for Training Physics-Informed Neural Networks},
+booktitle = {AAAI},
+year = {2023},
+}
+```
