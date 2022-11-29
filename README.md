@@ -61,6 +61,44 @@ To evaluate PINN-O, PINN-N, DMIS used in our paper, please run:
 python evaluate.py hydra.job.chdir=True
 ```
 
+## Results
+
+* Schrödinger Equation
+
+|Method|ME|MAE|RMSE|
+|:-:|:-:|:-:|:-:|
+|PINN-O|1.360|0.186|0.4092|
+|PINN-N|0.948|0.149|0.2906|
+|xPINN|1.617|0.124|0.0704|
+|cPINN|1.594|0.148|0.0783|
+|**PINN-DMIS(ours)**|**0.647**|0.127|0.2196|
+|**xPINN-DMIS(ours)**|0.999|0.046|0.0021|
+|**cPINN-DMIS(ours)**|1.005|**0.043**|**0.0018**|
+
+* Burgers' Equation
+
+|Method|ME|MAE|RMSE|
+|:-:|:-:|:-:|:-:|
+|PINN-O|0.451|0.0738|0.1100|
+|PINN-N|0.358|0.0579|0.0859|
+|xPINN|0.317|0.0115|0.0014|
+|cPINN|0.399|0.0097|0.0012|
+|**PINN-DMIS(ours)**|**0.225**|0.0294|0.0495|
+|**xPINN-DMIS(ours)**|0.270|0.0103|0.0011|
+|**cPINN-DMIS(ours)**|0.258|**0.0088**|**0.0007**|
+
+* KdV Equation
+
+|Method|ME|MAE|RMSE|
+|:-:|:-:|:-:|:-:|
+|PINN-O|2.140|0.363|0.520|
+|PINN-N|1.860|0.292|0.441|
+|xPINN|2.486|0.244|0.194|
+|cPINN|2.760|0.270|0.249|
+|**PINN-DMIS(ours)**|**1.170**|0.391|0.492|
+|**xPINN-DMIS(ours)**|1.596|**0.202**|**0.128**|
+|**cPINN-DMIS(ours)**|2.788|0.238|0.210|
+
 ## Citation
 If you find the code and pre-trained models useful for your research, please consider citing our paper. :blush:
 ```
