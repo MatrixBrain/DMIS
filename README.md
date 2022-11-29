@@ -99,6 +99,8 @@ python evaluate.py hydra.job.chdir=True
 |**xPINN-DMIS(ours)**|1.596|**0.202**|**0.128**|
 |**cPINN-DMIS(ours)**|2.788|0.238|0.210|
 
+Note: The results of PINN-O are different from the provided results in the original PINN paper because we use **extrapolation precision** and the original PINN paper uses **interpolation precision**.
+
 ## Citation
 If you find the code and pre-trained models useful for your research, please consider citing our paper. :blush:
 ```
