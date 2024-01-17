@@ -212,8 +212,10 @@ class SamplerWithDMIS(InterpolationSampler):
             np.take(self.seed_scores_t, self.interp_simplex_result),
             self.interp_bary_weights
         )
-        interp_scores -= np.min(interp_scores)
-        interp_scores += 1e-15
+        if np.min(interp_scores) < 5e-3:
+            # check min value and make sure it is positive(>5e-3)
+            # interp_scores -= np.min(interp_scores)
+            interp_scores += 5e-3
 
         # check update
         self.mesh_update_check()
@@ -377,8 +379,10 @@ class SamplerWithBasicIS(InterpolationSampler):
             np.take(self.seed_scores_t, self.interp_simplex_result),
             self.interp_bary_weights
         )
-        interp_scores -= np.min(interp_scores)
-        interp_scores += 1e-15
+        if np.min(interp_scores) < 5e-3:
+            # check min value and make sure it is positive(>5e-3)
+            # interp_scores -= np.min(interp_scores)
+            interp_scores += 5e-3
 
         # check update
         self.mesh_update_check()
