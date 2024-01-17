@@ -1,5 +1,5 @@
 #  DMIS (AAAI2023)
-Official code for "[DMIS: Dynamic Mesh-based Importance Sampling for Training Physics-Informed Neural Networks](https://arxiv.org/abs/2211.13944)" (AAAI 2023)
+Official code for "[DMIS: Dynamic Mesh-based Importance Sampling for Training Physics-Informed Neural Networks](https://ojs.aaai.org/index.php/AAAI/article/view/25669)" (AAAI 2023)
 
 ![](./images/DMIS-diagram.png)
 
